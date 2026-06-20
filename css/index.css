@@ -1,0 +1,301 @@
+/* ============================================
+   INDEX.CSS
+   Todos los estilos de la landing page única.
+   Mobile-first: primero el estilo para celular.
+   ============================================ */
+
+
+main {
+  padding-top: 70px;
+}
+
+/* 1. HERO */
+.hero {
+  background-color: var(--color-gris);
+  background-image: linear-gradient(180deg, rgba(13,13,13,0.6), rgba(13,13,13,0.95)),
+                     url('../img/hero/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.hero-contenido h1 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  color: var(--color-texto-claro);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero-contenido p {
+  max-width: 500px;
+  margin: 0 auto 25px auto;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+}
+
+/* 2. CARRUSEL (Bootstrap) */
+.seccion-carrusel {
+  margin: 50px auto;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border: 2px solid var(--color-gris-claro);
+  border-radius: 6px;
+}
+
+/* 3. BENEFICIOS - Flexbox (requisito #4 y #10) */
+.seccion-beneficios {
+  margin: 60px auto;
+}
+
+.caja-beneficios {
+  display: flex;
+  flex-direction: column; /* móvil: apilados */
+  gap: 20px;
+}
+
+.beneficio {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-gris-claro);
+  border-left: 4px solid var(--color-rojo);
+  padding: 20px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.beneficio h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--color-texto-claro);
+}
+
+.beneficio p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* 4. CARTELERA - CSS Grid (requisito #5 y #11) */
+.seccion-peliculas {
+  margin: 60px auto;
+}
+
+.grid-peliculas {
+  display: grid;
+  grid-template-columns: 1fr; /* móvil: 1 columna */
+  gap: 25px;
+}
+
+.tarjeta-pelicula {
+  position: relative; /* para poder superponer el texto encima de la imagen */
+  height: 380px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* único efecto avanzado permitido */
+}
+
+.tarjeta-pelicula:hover {
+  transform: translateY(-6px);
+}
+
+/* La imagen se estira y cubre TODA la tarjeta, como fondo */
+.tarjeta-pelicula img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* El texto va sobre la imagen, pegado abajo, con un degradado
+   oscuro detrás para que siempre se pueda leer */
+.info-pelicula {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 15px 15px;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(13,13,13,0.95) 70%);
+}
+
+.info-pelicula h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.2rem;
+  margin: 10px 0 4px;
+  color: var(--color-texto-claro);
+}
+
+.info-pelicula p {
+  font-size: 0.85rem;
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+/* 5. SECCIÓN INFORMATIVA - Flexbox (requisito #6) */
+.seccion-info {
+  display: flex;
+  flex-direction: column; /* móvil: imagen arriba, texto abajo */
+  gap: 25px;
+  padding: 50px 20px;
+  align-items: center;
+}
+
+.info-imagen img {
+  border-radius: 6px;
+  border: 1px solid var(--color-gris-claro);
+}
+
+.info-texto h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--color-texto-claro);
+}
+
+.info-texto h2 span {
+  color: var(--color-rojo);
+}
+
+.info-texto p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+/* 6. CTA (requisito #7) */
+.seccion-cta {
+  background-color: var(--color-rojo);
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.seccion-cta h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 12px;
+}
+
+.seccion-cta p {
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+  color: #f5e0e0;
+}
+
+.seccion-cta .btn-festival {
+  background-color: var(--color-negro);
+}
+
+.seccion-cta .btn-festival:hover {
+  background-color: #000;
+}
+
+/* 7. FORMULARIO - Flexbox (requisito #8) */
+.seccion-formulario {
+  max-width: 500px;
+  margin: 60px auto;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column; /* campos uno debajo del otro */
+  gap: 18px;
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-gris-claro);
+  border-radius: 6px;
+  padding: 30px 25px;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-formulario label {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+  background-color: var(--color-negro);
+  border: 1px solid var(--color-gris-claro);
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: var(--color-texto-claro);
+  font-family: var(--fuente-texto);
+  font-size: 0.9rem;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-rojo);
+}
+
+.formulario-contacto .btn-festival {
+  align-self: center;
+  margin-top: 5px;
+}
+
+/* ============================================
+   MEDIA QUERIES (mobile-first → agrandamos)
+   Mínimo 2 exigidos por el requisito #12.
+   ============================================ */
+
+@media (min-width: 768px) {
+  .hero-contenido h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-contenido p {
+    font-size: 1.05rem;
+  }
+
+  .carousel-inner img {
+    height: 420px;
+  }
+
+  .caja-beneficios {
+    flex-direction: row; /* beneficios en fila */
+  }
+
+  .grid-peliculas {
+    grid-template-columns: repeat(2, 1fr); /* tablet: 2 columnas */
+  }
+
+  .seccion-info {
+    flex-direction: row; /* imagen y texto lado a lado */
+    align-items: center;
+  }
+
+  .info-imagen,
+  .info-texto {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-contenido h1 {
+    font-size: 4.2rem;
+  }
+
+  .grid-peliculas {
+    grid-template-columns: repeat(4, 1fr); /* escritorio: 4 columnas */
+  }
+}

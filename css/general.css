@@ -1,0 +1,195 @@
+/* 1. VARIABLES CSS (requisito #15: paleta asignada) */
+:root {
+  --color-negro: #0d0d0d;     /* fondo principal */
+  --color-rojo: #8c1c1c;      /* acentos, botones, hover */
+  --color-gris: #1f1f1f;      /* tarjetas, secciones */
+  --color-gris-claro: #2c2c2c;/* bordes, separadores */
+  --color-texto: #e0e0e0;     /* texto principal sobre fondo oscuro */
+  --color-texto-claro: #ffffff;
+
+  --fuente-titulo: 'Playfair Display', serif;
+  --fuente-texto: 'Poppins', sans-serif;
+}
+
+/* 2. RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* requisito: box-sizing en todo el proyecto */
+}
+
+body {
+  background-color: var(--color-negro);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%; /* nunca se desborda en móvil */
+  display: block;
+}
+
+/* 3. NAVBAR
+   Usamos el navbar de Bootstrap (clases navbar, navbar-expand-lg,
+   collapse, navbar-toggler)  */
+
+.navbar {
+  background-color: var(--color-negro);
+  border-bottom: 2px solid var(--color-rojo);
+  padding: 15px 20px;
+}
+
+.navbar-brand {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-texto-claro) !important;
+  letter-spacing: 1px;
+}
+
+.navbar-brand span {
+  color: var(--color-rojo);
+}
+
+.nav-link {
+  color: var(--color-texto) !important;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 8px 0; /* en móvil el menú es vertical, damos espacio */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-rojo) !important;
+}
+
+/* El botón hamburguesa que trae Bootstrap por defecto es blanco/oscuro
+   genérico; lo recoloreamos para que combine con el tema oscuro */
+.navbar-toggler {
+  border-color: var(--color-rojo);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(-50deg);
+  /* esto tiñe el ícono de blanco hacia un tono rojizo */
+}
+
+/* 4. BOTONES propios del sitio (no son de Bootstrap) */
+.btn-festival {
+  display: inline-block;
+  background-color: var(--color-rojo);
+  color: var(--color-texto-claro);
+  border: none;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-festival:hover {
+  background-color: #6e1414;
+  transform: translateY(-3px);
+}
+
+/* 5. CONTENEDOR GENERAL (para no pegar el contenido a los bordes) */
+.contenedor {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* 6. TÍTULOS DE SECCIÓN (reutilizable en varias páginas) */
+.titulo-seccion {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-texto-claro);
+}
+
+.titulo-seccion span {
+  color: var(--color-rojo);
+}
+
+/* 7. FOOTER */
+footer {
+  background-color: var(--color-gris);
+  border-top: 2px solid var(--color-rojo);
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer .footer-marca {
+  font-family: var(--fuente-titulo);
+  font-size: 1.3rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 10px;
+}
+
+footer .footer-links {
+  display: flex;
+  flex-direction: column; /* en móvil, uno debajo del otro */
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+footer .footer-links a {
+  font-size: 0.85rem;
+  color: var(--color-texto);
+}
+
+footer .footer-links a:hover {
+  color: var(--color-rojo);
+}
+
+footer p {
+  font-size: 0.8rem;
+  margin-top: 15px;
+  color: #999;
+}
+
+/* ============================================
+   8. MEDIA QUERIES (requisito #12: mínimo 2)
+   Mobile-first: el CSS de arriba YA es el de móvil.
+   Aquí solo agrandamos cosas para pantallas más grandes.
+   ============================================ */
+
+/* TABLET en adelante (768px+) */
+@media (min-width: 768px) {
+  .contenedor {
+    max-width: 720px;
+    padding: 0 30px;
+  }
+
+  .titulo-seccion {
+    font-size: 2.2rem;
+  }
+
+  footer .footer-links {
+    flex-direction: row; /* en tablet/desktop, en una sola fila */
+    gap: 25px;
+  }
+}
+
+/* ESCRITORIO en adelante (1024px+) */
+@media (min-width: 1024px) {
+  .contenedor {
+    max-width: 960px;
+  }
+
+  .nav-link {
+    margin: 0 0 0 10px; /* en escritorio el menú vuelve a ser horizontal */
+  }
+}

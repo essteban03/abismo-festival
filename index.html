@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Void - Festival de Cine de Terror</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Nuestros CSS propios -->
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- ================= 1. ENCABEZADO / 2. MENÚ (Bootstrap navbar) ================= -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#inicio">THE <span>VOID</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cartelera">Cartelera</a></li>
+            <li class="nav-item"><a class="nav-link" href="#conocenos">Conócenos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= 3. SECCIÓN PRINCIPAL / HERO ================= -->
+    <section id="inicio" class="hero">
+      <div class="contenedor hero-contenido">
+        <h1>THE VOID</h1>
+        <p>Sumérgete en la oscuridad. El festival de cine de terror más visceral del año. No hay escapatoria.</p>
+        <a href="#cartelera" class="btn-festival">Ver Cartelera</a>
+      </div>
+    </section>
+
+    <!-- ================= CARRUSEL (Bootstrap, recurso extra) ================= -->
+    <section class="contenedor seccion-carrusel">
+      <h2 class="titulo-seccion">Momentos del <span>Festival</span></h2>
+
+      <div id="carruselFestival" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselFestival" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carruselFestival" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carruselFestival" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/ambiente/ambiente1.jpg" class="d-block w-100" alt="Sala de proyección">
+          </div>
+          <div class="carousel-item">
+            <img src="img/ambiente/ambiente2.jpg" class="d-block w-100" alt="Público del festival">
+          </div>
+          <div class="carousel-item">
+            <img src="img/ambiente/ambiente3.jpg" class="d-block w-100" alt="Alfombra roja">
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselFestival" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselFestival" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= 4. TRES BENEFICIOS - Flexbox ================= -->
+    <section class="contenedor seccion-beneficios">
+      <h2 class="titulo-seccion">¿Por qué <span>asistir?</span></h2>
+
+      <div class="caja-beneficios">
+        <article class="beneficio">
+          <h3>Salas Inmersivas</h3>
+          <p>Sonido envolvente y pantallas gigantes para sentir cada escena.</p>
+        </article>
+        <article class="beneficio">
+          <h3>Invitados Especiales</h3>
+          <p>Directores y actores del género de terror presentes en vivo.</p>
+        </article>
+        <article class="beneficio">
+          <h3>Proyección 4K</h3>
+          <p>Calidad de imagen impecable en todas las funciones.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= 5. CUATRO TARJETAS - CSS Grid ================= -->
+    <section id="cartelera" class="contenedor seccion-peliculas">
+      <h2 class="titulo-seccion">En <span>Cartelera</span></h2>
+
+      <div class="grid-peliculas">
+
+        <article class="tarjeta-pelicula">
+          <img src="img/peliculas/pelicula1.jpg" alt="El Susurro">
+          <div class="info-pelicula">
+            <span class="badge text-bg-danger">Slasher</span>
+            <h3>El Susurro</h3>
+            <p>22:00 | Sala 1</p>
+            <a href="#contacto" class="btn-festival">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-pelicula">
+          <img src="img/peliculas/pelicula2.png" alt="Mente Rota">
+          <div class="info-pelicula">
+            <span class="badge text-bg-danger">Psicológico</span>
+            <h3>Mente Rota</h3>
+            <p>00:00 | Sala 2</p>
+            <a href="#contacto" class="btn-festival">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-pelicula">
+          <img src="img/peliculas/pelicula3.png" alt="Carne">
+          <div class="info-pelicula">
+            <span class="badge text-bg-danger">Gore</span>
+            <h3>Carne</h3>
+            <p>02:00 | Sala 1</p>
+            <a href="#contacto" class="btn-festival">Reservar</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-pelicula">
+          <img src="img/peliculas/pelicula4.png" alt="Ritual">
+          <div class="info-pelicula">
+            <span class="badge text-bg-danger">Folk</span>
+            <h3>Ritual</h3>
+            <p>21:30 | Sala 3</p>
+            <a href="#contacto" class="btn-festival">Reservar</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= 6. SECCIÓN INFORMATIVA - Flexbox ================= -->
+    <section id="conocenos" class="contenedor seccion-info">
+      <div class="info-imagen">
+        <img src="img/ambiente/sala.jpg" alt="Sala de cine del festival">
+      </div>
+      <div class="info-texto">
+        <h2>El <span>Festival</span></h2>
+        <p>
+          The Void nació hace cinco años como un espacio para los amantes del
+          cine de terror más oscuro y arriesgado. Cada edición reúne
+          producciones independientes que no encuentran lugar en las salas
+          comerciales, proyectadas en un ambiente pensado para la inmersión
+          total.
+        </p>
+        <p>
+          Tres días, cuatro salas y un solo objetivo: que no puedas dormir
+          tranquilo después de salir.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= 7. LLAMADO A LA ACCIÓN ================= -->
+    <section class="seccion-cta">
+      <div class="contenedor">
+        <h2>No te quedes afuera de la oscuridad</h2>
+        <p>Las entradas son limitadas. Asegura tu lugar antes de que se agoten.</p>
+        <a href="#contacto" class="btn-festival">Comprar Entradas</a>
+      </div>
+    </section>
+
+    <!-- ================= 8. FORMULARIO (4 campos) ================= -->
+    <section id="contacto" class="contenedor seccion-formulario">
+      <h2 class="titulo-seccion">Reserva tu <span>Entrada</span></h2>
+
+      <form class="formulario-contacto">
+
+        <div class="campo-formulario">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Esteban Gordillo">
+        </div>
+
+        <div class="campo-formulario">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+        </div>
+
+        <div class="campo-formulario">
+          <label for="pelicula">Película de interés</label>
+          <select id="pelicula" name="pelicula">
+            <option value="">Selecciona una función</option>
+            <option value="susurro">El Susurro</option>
+            <option value="mente-rota">Mente Rota</option>
+            <option value="carne">Carne</option>
+            <option value="ritual">Ritual</option>
+          </select>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos si tienes alguna solicitud especial"></textarea>
+        </div>
+
+        <button type="submit" class="btn-festival">Enviar Solicitud</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ================= 9. PIE DE PÁGINA ================= -->
+  <footer>
+    <p class="footer-marca">THE VOID</p>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#cartelera">Cartelera</a>
+      <a href="#conocenos">Conócenos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <p>&copy; 2026 The Void Film Festival. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Bootstrap JS (necesario para el navbar y el carrusel) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
